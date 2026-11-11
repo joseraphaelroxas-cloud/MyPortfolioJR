@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,9 +63,7 @@
             transition: background .25s,color .25s
         }
 
-        a {
-            color: inherit
-        }
+        a { color: inherit }
 
         button {
             font: inherit;
@@ -95,19 +94,17 @@
             transition: border-color .2s
         }
 
-            .bar.scrolled {
-                border-color: var(--line)
-            }
+        .bar.scrolled { border-color: var(--line) }
 
-            .bar .wrap {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: .6rem;
-                flex-wrap: wrap;
-                padding-top: .8rem;
-                padding-bottom: .8rem
-            }
+        .bar .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: .6rem;
+            flex-wrap: wrap;
+            padding-top: .8rem;
+            padding-bottom: .8rem
+        }
 
         .logo {
             font: 800 1.3rem var(--display);
@@ -127,9 +124,7 @@
             transition: background .15s
         }
 
-            .theme:hover {
-                background: var(--surface)
-            }
+        .theme:hover { background: var(--surface) }
 
         h2 {
             font: 800 2.1rem/1.15 var(--display);
@@ -137,19 +132,17 @@
             margin-bottom: 2rem
         }
 
-            h2::after {
-                content: "";
-                display: block;
-                width: 3rem;
-                height: 5px;
-                border-radius: 3px;
-                background: var(--marigold);
-                margin-top: .6rem
-            }
-
-        section {
-            padding: 4rem 0 1rem
+        h2::after {
+            content: "";
+            display: block;
+            width: 3rem;
+            height: 5px;
+            border-radius: 3px;
+            background: var(--marigold);
+            margin-top: .6rem
         }
+
+        section { padding: 4rem 0 1rem }
 
         .item, .cert, .project, .photo, .facts li, .contact-grid {
             border-radius: var(--r)
@@ -173,50 +166,35 @@
             color: var(--ink)
         }
 
-            dialog::backdrop {
-                background: rgba(5,10,20,.72)
-            }
+        dialog::backdrop { background: rgba(5,10,20,.72) }
 
-            dialog img {
-                display: block;
-                max-width: 100%;
-                max-height: 75vh;
-                margin: 0 auto;
-                background: #fff;
-                border-radius: 10px
-            }
+        dialog img {
+            display: block;
+            max-width: 100%;
+            max-height: 75vh;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px
+        }
 
-            dialog button {
-                margin-top: .8rem;
-                padding: .5rem 1.2rem;
-                border-radius: 999px;
-                border: 2px solid var(--ink);
-                background: transparent;
-                font-weight: 500
-            }
+        dialog button {
+            margin-top: .8rem;
+            padding: .5rem 1.2rem;
+            border-radius: 999px;
+            border: 2px solid var(--ink);
+            background: transparent;
+            font-weight: 500
+        }
 
         @media (max-width:560px) {
-            .wrap {
-                padding: 0 1.1rem
-            }
-
-            h2 {
-                font-size: 1.8rem
-            }
-
-            section {
-                padding-top: 3rem
-            }
+            .wrap { padding: 0 1.1rem }
+            h2 { font-size: 1.8rem }
+            section { padding-top: 3rem }
         }
 
         @media (prefers-reduced-motion:reduce) {
-            html {
-                scroll-behavior: auto
-            }
-
-            * {
-                transition: none !important
-            }
+            html { scroll-behavior: auto }
+            * { transition: none !important }
         }
 
         .back {
@@ -225,9 +203,7 @@
             color: var(--muted)
         }
 
-            .back:hover {
-                color: var(--ink)
-            }
+        .back:hover { color: var(--ink) }
 
         h1 {
             font: 800 clamp(2.6rem,8vw,5rem)/1 var(--display);
@@ -262,18 +238,14 @@
             transition: background .15s,color .15s
         }
 
-            .tab:hover {
-                color: var(--ink)
-            }
+        .tab:hover { color: var(--ink) }
 
-            .tab[aria-selected="true"] {
-                background: var(--ink);
-                color: var(--bg)
-            }
-
-        .panel[hidden] {
-            display: none
+        .tab[aria-selected="true"] {
+            background: var(--ink);
+            color: var(--bg)
         }
+
+        .panel[hidden] { display: none }
 
         .timeline {
             display: grid;
@@ -287,35 +259,30 @@
             padding: 1.4rem 1.7rem
         }
 
-            .item h3 {
-                font: 800 1.3rem/1.25 var(--display);
-                letter-spacing: -.01em
-            }
+        .item h3 {
+            font: 800 1.3rem/1.25 var(--display);
+            letter-spacing: -.01em
+        }
 
-            .item .meta {
-                color: var(--muted);
-                font-size: .92rem;
-                margin-bottom: .3rem
-            }
+        .item .meta {
+            color: var(--muted);
+            font-size: .92rem;
+            margin-bottom: .3rem
+        }
 
-            .item p {
-                max-width: 42rem;
-                margin-top: .3rem
-            }
+        .item p {
+            max-width: 42rem;
+            margin-top: .3rem
+        }
 
-            .item.todo {
-                border-style: dashed;
-                border-left-style: dashed;
-                color: var(--muted)
-            }
+        .item.todo {
+            border-style: dashed;
+            border-left-style: dashed;
+            color: var(--muted)
+        }
 
-            .item ul {
-                margin: .6rem 0 0 1.2rem
-            }
-
-            .item li {
-                margin: .2rem 0
-            }
+        .item ul { margin: .6rem 0 0 1.2rem }
+        .item li { margin: .2rem 0 }
 
         .gallery {
             display: grid;
@@ -333,17 +300,25 @@
             transition: box-shadow .2s,transform .2s
         }
 
-            .photo:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 24px -14px rgba(15,27,45,.45)
-            }
+        .photo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px -14px rgba(15,27,45,.45)
+        }
 
-            .photo img {
-                display: block;
-                width: 100%;
-                height: 170px;
-                object-fit: cover
-            }
+        .photo img {
+            display: block;
+            width: 100%;
+            height: 170px;
+            object-fit: cover
+        }
+
+        .cap {
+            display: block;
+            padding: .6rem .9rem;
+            font-size: .9rem;
+            color: var(--muted);
+            border-top: 1px solid var(--line)
+        }
 
         .certs {
             display: grid;
@@ -361,58 +336,54 @@
             align-content: start
         }
 
-            .cert.wide {
-                grid-column: 1/-1
-            }
+        .cert.wide { grid-column: 1/-1 }
 
-            .cert .img {
-                background: #fff;
-                border: 1px solid var(--line);
-                border-radius: 12px;
-                padding: .5rem;
-                cursor: zoom-in
-            }
+        .cert .img {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: .5rem;
+            cursor: zoom-in
+        }
 
-            .cert img {
-                display: block;
-                width: 140px;
-                height: 140px;
-                object-fit: contain
-            }
+        .cert img {
+            display: block;
+            width: 140px;
+            height: 140px;
+            object-fit: contain
+        }
 
-            .cert .img.wide {
-                width: 100%
-            }
+        .cert .img.wide { width: 100% }
 
-                .cert .img.wide img {
-                    width: 100%;
-                    height: auto
-                }
+        .cert .img.wide img {
+            width: 100%;
+            height: auto
+        }
 
-            .cert .img.land {
-                width: 100%;
-                max-width: 300px
-            }
+        .cert .img.land {
+            width: 100%;
+            max-width: 300px
+        }
 
-                .cert .img.land img {
-                    width: 100%;
-                    height: auto
-                }
+        .cert .img.land img {
+            width: 100%;
+            height: auto
+        }
 
-            .cert h3 {
-                font: 800 1.15rem/1.3 var(--display)
-            }
+        .cert h3 {
+            font: 800 1.15rem/1.3 var(--display)
+        }
 
-            .cert .meta {
-                color: var(--muted);
-                font-size: .93rem;
-                line-height: 1.5
-            }
+        .cert .meta {
+            color: var(--muted);
+            font-size: .93rem;
+            line-height: 1.5
+        }
 
-            .cert a {
-                color: var(--cobalt);
-                font-weight: 500
-            }
+        .cert a {
+            color: var(--cobalt);
+            font-weight: 500
+        }
     </style>
 </head>
 <body>
@@ -436,8 +407,6 @@
 
             <div class="panel" role="tabpanel" id="p11" aria-labelledby="t11">
                 <div class="timeline">
-                    <!-- TODO: replace each dashed block with a real achievement, then delete the "todo" class.
-                         Copy a block to add more. -->
                     <article class="item" style="--c:var(--cobalt)">
                         <div class="meta">Grade 11 · TVL-ICT · S.Y. 2021–2022 · Colegio de Calumpit Inc.</div>
                         <h3>Academic Excellence Awardee, With Honors</h3>
@@ -453,16 +422,30 @@
 
             <div class="panel" role="tabpanel" id="p12" aria-labelledby="t12" hidden>
                 <div class="timeline">
-                    <article class="item todo" style="--c:var(--marigold)">
-                        <div class="meta">Grade 12 · School year</div>
-                        <h3>Add your Grade 12 achievement here</h3>
-                        <p>Honors, awards, competitions, leadership roles or projects.</p>
+                    <article class="item" style="--c:var(--marigold)">
+                        <div class="meta">Grade 12 · Senior high school</div>
+                        <h3>Graduated With Honors</h3>
+                        <p>Successfully completed Grade 12 and graduated with honors in recognition of my academic performance and dedication throughout senior high school.</p>
                     </article>
-                    <article class="item todo" style="--c:var(--cobalt)">
-                        <div class="meta">Grade 12 · School year</div>
-                        <h3>Add another one here</h3>
-                        <p>One or two sentences on what you did and what it earned you.</p>
-                    </article>
+                </div>
+                <h3 class="sub">Grade 12 highlights</h3>
+                <div class="gallery">
+                    <button class="photo" type="button" data-full="images/SS8.PNG" data-alt="Grade 12 achievement photo 1" aria-label="Enlarge Grade 12 achievement photo 1">
+                        <img src="images/SS8.PNG" alt="Grade 12 achievement photo 1" loading="lazy">
+                        <span class="cap">Grade 12 highlight</span>
+                    </button>
+                    <button class="photo" type="button" data-full="images/SS9.PNG" data-alt="Grade 12 achievement photo 2" aria-label="Enlarge Grade 12 achievement photo 2">
+                        <img src="images/SS9.PNG" alt="Grade 12 achievement photo 2" loading="lazy">
+                        <span class="cap">Grade 12 highlight</span>
+                    </button>
+                    <button class="photo" type="button" data-full="images/SS10.PNG" data-alt="Grade 12 achievement photo 3" aria-label="Enlarge Grade 12 achievement photo 3">
+                        <img src="images/SS10.PNG" alt="Grade 12 achievement photo 3" loading="lazy">
+                        <span class="cap">Grade 12 highlight</span>
+                    </button>
+                    <button class="photo" type="button" data-full="images/SS11.PNG" data-alt="Grade 12 achievement photo 4" aria-label="Enlarge Grade 12 achievement photo 4">
+                        <img src="images/SS11.PNG" alt="Grade 12 achievement photo 4" loading="lazy">
+                        <span class="cap">Grade 12 highlight</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -474,17 +457,24 @@
                 <h3>PC builder and team lead</h3>
                 <p>I learned to build computers from individual parts, and I handled a team that built PCs for two departments.</p>
                 <ul>
-                    <!-- TODO (optional): add how many PCs you built and the school years -->
                     <li>Built PCs for the college department</li>
                     <li>Built PCs for the elementary to high school department laboratory</li>
                     <li>Led and coordinated the team doing the builds</li>
                 </ul>
             </article>
             <div class="gallery">
-                <button class="photo" type="button" data-full="images/SS3.PNG" data-alt="Installing parts inside a PC case" aria-label="Enlarge photo: installing parts inside a PC case"><img src="images/SS3.PNG" alt="Installing parts inside a PC case" loading="lazy"></button>
-                <button class="photo" type="button" data-full="images/SS4.PNG" data-alt="Two people assembling a PC" aria-label="Enlarge photo: two people assembling a PC"><img src="images/SS4.PNG" alt="Two people assembling a PC" loading="lazy"></button>
-                <button class="photo" type="button" data-full="images/SS5.PNG" data-alt="Assembling PC hardware at a workbench" aria-label="Enlarge photo: assembling PC hardware at a workbench"><img src="images/SS5.PNG" alt="Assembling PC hardware at a workbench" loading="lazy"></button>
-                <button class="photo" type="button" data-full="images/SS6.PNG" data-alt="Working at a computer lab workstation" aria-label="Enlarge photo: working at a computer lab workstation"><img src="images/SS6.PNG" alt="Working at a computer lab workstation" loading="lazy"></button>
+                <button class="photo" type="button" data-full="images/SS3.PNG" data-alt="Installing parts inside a PC case" aria-label="Enlarge photo: installing parts inside a PC case">
+                    <img src="images/SS3.PNG" alt="Installing parts inside a PC case" loading="lazy">
+                </button>
+                <button class="photo" type="button" data-full="images/SS4.PNG" data-alt="Two people assembling a PC" aria-label="Enlarge photo: two people assembling a PC">
+                    <img src="images/SS4.PNG" alt="Two people assembling a PC" loading="lazy">
+                </button>
+                <button class="photo" type="button" data-full="images/SS5.PNG" data-alt="Assembling PC hardware at a workbench" aria-label="Enlarge photo: assembling PC hardware at a workbench">
+                    <img src="images/SS5.PNG" alt="Assembling PC hardware at a workbench" loading="lazy">
+                </button>
+                <button class="photo" type="button" data-full="images/SS6.PNG" data-alt="Working at a computer lab workstation" aria-label="Enlarge photo: working at a computer lab workstation">
+                    <img src="images/SS6.PNG" alt="Working at a computer lab workstation" loading="lazy">
+                </button>
             </div>
         </section>
 
@@ -492,21 +482,22 @@
             <h2 id="certs">Certificates</h2>
             <div class="certs">
                 <article class="cert">
-                    <button class="img" type="button" data-full="images/SS2.PNG" data-alt="Microsoft Office Specialist badge" aria-label="Enlarge Microsoft Office Specialist badge" style="padding:.5rem">
+                    <button class="img" type="button" data-full="images/SS2.PNG" data-alt="Microsoft Office Specialist badge" aria-label="Enlarge Microsoft Office Specialist badge">
                         <img src="images/SS2.PNG" alt="Microsoft Office Specialist badge" width="140" height="140">
                     </button>
                     <h3>Microsoft Office Specialist: Excel Associate (Office 2019)</h3>
                     <div class="meta">Issued by Microsoft via Credly</div>
-                    <!-- TODO: replace # with your public Credly badge link (Credly > your badge > Share > copy link) -->
                     <a href="#" target="_blank" rel="noopener">View credential</a>
                 </article>
+
                 <article class="cert wide">
-                    <button class="img wide" type="button" data-full="images/SS1.PNG" data-alt="Certiport transcript: Microsoft Office Specialist, Excel 2019, exam passed 5/21/2024" aria-label="Enlarge Certiport transcript" style="padding:.5rem">
+                    <button class="img wide" type="button" data-full="images/SS1.PNG" data-alt="Certiport transcript: Microsoft Office Specialist, Excel 2019, exam passed 5/21/2024" aria-label="Enlarge Certiport transcript">
                         <img src="images/SS1.PNG" alt="Certiport transcript: Microsoft Office Specialist, Excel 2019, exam passed 5/21/2024" width="966" height="140">
                     </button>
                     <h3>Certiport Digital Transcript: Microsoft Office Specialist, Excel 2019</h3>
                     <div class="meta">Exam: Microsoft Excel (Office 2019) · Passed May 21, 2024 · Administered by La Consolacion University Philippines</div>
                 </article>
+
                 <article class="cert">
                     <button class="img land" type="button" data-full="images/SS7.PNG" data-alt="Certificate of Recognition, With Honors, Grade 11 TVL-ICT, Colegio de Calumpit" aria-label="Enlarge Certificate of Recognition">
                         <img src="images/SS7.PNG" alt="Certificate of Recognition, With Honors, Grade 11 TVL-ICT, Colegio de Calumpit" width="427" height="329">
@@ -514,12 +505,13 @@
                     <h3>Certificate of Recognition, With Honors</h3>
                     <div class="meta">Grade 11 TVL-ICT · Academic Excellence, 1st semester · Colegio de Calumpit Inc. · January 15, 2022</div>
                 </article>
-                <!-- To add another certificate: put the image in the images/ folder and copy the <article class="cert"> block above. -->
             </div>
         </section>
     </main>
 
-    <div class="wrap"><footer>© <span id="year"></span> Jose Raphael Roxas</footer></div>
+    <div class="wrap">
+        <footer>© <span id="year"></span> Jose Raphael Roxas</footer>
+    </div>
 
     <dialog id="lightbox" aria-label="Certificate preview">
         <img id="lbImg" alt="">
@@ -527,7 +519,7 @@
     </dialog>
 
     <script>
-        /* picture fallback: if a picture isn't found in images/, try the main folder and .png spelling */
+        /* Picture fallback: if a picture isn't found in images/, try the main folder and .png spelling */
         addEventListener("error", e => {
             const img = e.target;
             if (!(img instanceof HTMLImageElement)) return;
@@ -538,25 +530,49 @@
             const tries = [];
             ["images/", ""].forEach(d => names.forEach(n => tries.push(d + n)));
             const i = +(img.dataset.try || 0);
-            if (i + 1 < tries.length) { img.dataset.try = i + 1; img.src = tries[i + 1]; }
+            if (i + 1 < tries.length) {
+                img.dataset.try = i + 1;
+                img.src = tries[i + 1];
+            }
         }, true);
 
         document.getElementById("year").textContent = new Date().getFullYear();
 
-        /* theme (shares the choice made on the main page) */
-        const root = document.documentElement, themeBtn = document.getElementById("theme");
+        /* Theme: shares the choice made on the main page */
+        const root = document.documentElement;
+        const themeBtn = document.getElementById("theme");
+
         function setTheme(t, save) {
             root.dataset.theme = t;
             themeBtn.textContent = t === "dark" ? "☀️" : "🌙";
-            themeBtn.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
-            if (save) { try { localStorage.setItem("theme", t); } catch (e) { } }
+            themeBtn.setAttribute(
+                "aria-label",
+                t === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            );
+            if (save) {
+                try {
+                    localStorage.setItem("theme", t);
+                } catch (e) {}
+            }
         }
-        let saved = null; try { saved = localStorage.getItem("theme"); } catch (e) { }
-        setTheme(saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"), false);
-        themeBtn.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark", true));
 
-        /* grade tabs with arrow-key support */
+        let saved = null;
+        try {
+            saved = localStorage.getItem("theme");
+        } catch (e) {}
+
+        setTheme(
+            saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"),
+            false
+        );
+
+        themeBtn.addEventListener("click", () => {
+            setTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
+        });
+
+        /* Grade tabs with arrow-key support */
         const tabs = [...document.querySelectorAll(".tab")];
+
         function select(tab) {
             tabs.forEach(t => {
                 const on = t === tab;
@@ -566,6 +582,7 @@
             });
             tab.focus();
         }
+
         tabs.forEach((t, i) => {
             t.addEventListener("click", () => select(t));
             t.addEventListener("keydown", e => {
@@ -574,13 +591,24 @@
             });
         });
 
-        /* certificate lightbox */
-        const lb = document.getElementById("lightbox"), lbImg = document.getElementById("lbImg");
-        document.querySelectorAll(".cert .img, .photo").forEach(b => b.addEventListener("click", () => {
-            lbImg.dataset.try = 0; lbImg.src = b.querySelector("img").getAttribute("src"); lbImg.alt = b.dataset.alt; lb.showModal();
-        }));
+        /* Certificate and photo lightbox */
+        const lb = document.getElementById("lightbox");
+        const lbImg = document.getElementById("lbImg");
+
+        document.querySelectorAll(".cert .img, .photo").forEach(b => {
+            b.addEventListener("click", () => {
+                lbImg.dataset.try = 0;
+                lbImg.src = b.querySelector("img").getAttribute("src");
+                lbImg.alt = b.dataset.alt;
+                lb.showModal();
+            });
+        });
+
         document.getElementById("lbClose").addEventListener("click", () => lb.close());
-        lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+
+        lb.addEventListener("click", e => {
+            if (e.target === lb) lb.close();
+        });
     </script>
 </body>
 </html>
