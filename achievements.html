@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Achievements · Jose Raphael Roxas</title>
-    <meta name="description" content="Senior high school achievements (Grade 11 to 12) and certificates of Jose Raphael Roxas.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏅</text></svg>">
+    <meta name="description" content="Achievements, college highlights, experience, and certificates of Jose Raphael Roxas.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg: #eef1f6;
@@ -20,20 +21,9 @@
             --cobalt: #2447f5;
             --marigold: #f2b705;
             --mint: #1f9d74;
-            --display: "Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
-            --body: "IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+            --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+            --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
             --r: 14px;
-        }
-
-        @media (prefers-color-scheme:dark) {
-            :root:not([data-theme="light"]) {
-                --bg: #0e1522;
-                --surface: #16202f;
-                --ink: #e8edf6;
-                --muted: #9aa8bf;
-                --line: #27344a;
-                --cobalt: #7d96ff
-            }
         }
 
         :root[data-theme="dark"] {
@@ -42,17 +32,28 @@
             --ink: #e8edf6;
             --muted: #9aa8bf;
             --line: #27344a;
-            --cobalt: #7d96ff
+            --cobalt: #7d96ff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0e1522;
+                --surface: #16202f;
+                --ink: #e8edf6;
+                --muted: #9aa8bf;
+                --line: #27344a;
+                --cobalt: #7d96ff;
+            }
         }
 
         * {
             box-sizing: border-box;
-            margin: 0
+            margin: 0;
         }
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 5rem
+            scroll-padding-top: 5rem;
         }
 
         body {
@@ -60,56 +61,58 @@
             color: var(--ink);
             font: 400 1.05rem/1.7 var(--body);
             -webkit-font-smoothing: antialiased;
-            transition: background .25s,color .25s
+            transition: background .25s, color .25s;
         }
 
-        a { color: inherit }
+        a {
+            color: inherit;
+        }
 
         button {
             font: inherit;
             color: inherit;
-            cursor: pointer
+            cursor: pointer;
         }
 
         :focus-visible {
             outline: 3px solid var(--cobalt);
             outline-offset: 3px;
-            border-radius: 4px
+            border-radius: 4px;
         }
 
         .wrap {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 1.5rem
+            padding: 0 1.5rem;
         }
 
         .bar {
             position: sticky;
             top: 0;
             z-index: 10;
-            background: color-mix(in srgb,var(--bg) 88%,transparent);
+            background: color-mix(in srgb, var(--bg) 88%, transparent);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid transparent;
-            transition: border-color .2s
+            border-bottom: 1px solid var(--line);
         }
-
-        .bar.scrolled { border-color: var(--line) }
 
         .bar .wrap {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: .6rem;
-            flex-wrap: wrap;
             padding-top: .8rem;
-            padding-bottom: .8rem
+            padding-bottom: .8rem;
         }
 
-        .logo {
-            font: 800 1.3rem var(--display);
+        .back {
             text-decoration: none;
-            letter-spacing: -.02em
+            font-weight: 500;
+            color: var(--muted);
+        }
+
+        .back:hover {
+            color: var(--ink);
         }
 
         .theme {
@@ -121,15 +124,18 @@
             display: grid;
             place-items: center;
             font-size: 1.05rem;
-            transition: background .15s
         }
 
-        .theme:hover { background: var(--surface) }
+        h1 {
+            font: 800 clamp(2.6rem, 8vw, 5rem)/1 var(--display);
+            letter-spacing: -.035em;
+            margin-top: 3rem;
+        }
 
         h2 {
             font: 800 2.1rem/1.15 var(--display);
             letter-spacing: -.02em;
-            margin-bottom: 2rem
+            margin-bottom: 2rem;
         }
 
         h2::after {
@@ -139,83 +145,22 @@
             height: 5px;
             border-radius: 3px;
             background: var(--marigold);
-            margin-top: .6rem
+            margin-top: .6rem;
         }
 
-        section { padding: 4rem 0 1rem }
-
-        .item, .cert, .project, .photo, .facts li, .contact-grid {
-            border-radius: var(--r)
+        h3 {
+            font-family: var(--display);
         }
 
-        footer {
-            margin-top: 4rem;
-            border-top: 1px solid var(--line);
-            padding: 2rem 0 2.5rem;
-            color: var(--muted);
-            font-size: .9rem;
-            text-align: center
-        }
-
-        dialog {
-            border: 0;
-            border-radius: 18px;
-            padding: 1rem;
-            background: var(--surface);
-            max-width: min(94vw,900px);
-            color: var(--ink)
-        }
-
-        dialog::backdrop { background: rgba(5,10,20,.72) }
-
-        dialog img {
-            display: block;
-            max-width: 100%;
-            max-height: 75vh;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 10px
-        }
-
-        dialog button {
-            margin-top: .8rem;
-            padding: .5rem 1.2rem;
-            border-radius: 999px;
-            border: 2px solid var(--ink);
-            background: transparent;
-            font-weight: 500
-        }
-
-        @media (max-width:560px) {
-            .wrap { padding: 0 1.1rem }
-            h2 { font-size: 1.8rem }
-            section { padding-top: 3rem }
-        }
-
-        @media (prefers-reduced-motion:reduce) {
-            html { scroll-behavior: auto }
-            * { transition: none !important }
-        }
-
-        .back {
-            text-decoration: none;
-            font-weight: 500;
-            color: var(--muted)
-        }
-
-        .back:hover { color: var(--ink) }
-
-        h1 {
-            font: 800 clamp(2.6rem,8vw,5rem)/1 var(--display);
-            letter-spacing: -.035em;
-            margin-top: 3rem
+        section {
+            padding: 4rem 0 1rem;
         }
 
         .lead {
             max-width: 36rem;
             margin-top: 1rem;
             color: var(--muted);
-            font-size: 1.15rem
+            font-size: 1.15rem;
         }
 
         .tabs {
@@ -225,7 +170,7 @@
             border: 1px solid var(--line);
             border-radius: 999px;
             padding: .25rem;
-            margin-bottom: 1.5rem
+            margin-bottom: 1.5rem;
         }
 
         .tab {
@@ -235,158 +180,250 @@
             font-weight: 500;
             color: var(--muted);
             border-radius: 999px;
-            transition: background .15s,color .15s
+            transition: background .15s, color .15s;
         }
 
-        .tab:hover { color: var(--ink) }
+        .tab:hover {
+            color: var(--ink);
+        }
 
         .tab[aria-selected="true"] {
             background: var(--ink);
-            color: var(--bg)
+            color: var(--bg);
         }
 
-        .panel[hidden] { display: none }
+        .panel[hidden] {
+            display: none;
+        }
 
         .timeline {
             display: grid;
-            gap: 1rem
+            gap: 1rem;
         }
 
         .item {
             background: var(--surface);
             border: 1px solid var(--line);
-            border-left: 7px solid var(--c,var(--cobalt));
-            padding: 1.4rem 1.7rem
+            border-left: 7px solid var(--c, var(--cobalt));
+            border-radius: var(--r);
+            padding: 1.4rem 1.7rem;
         }
 
         .item h3 {
             font: 800 1.3rem/1.25 var(--display);
-            letter-spacing: -.01em
+            letter-spacing: -.01em;
         }
 
         .item .meta {
             color: var(--muted);
             font-size: .92rem;
-            margin-bottom: .3rem
+            margin-bottom: .3rem;
         }
 
         .item p {
             max-width: 42rem;
-            margin-top: .3rem
+            margin-top: .3rem;
         }
 
-        .item.todo {
-            border-style: dashed;
-            border-left-style: dashed;
-            color: var(--muted)
+        .item ul {
+            margin: .6rem 0 0 1.2rem;
         }
 
-        .item ul { margin: .6rem 0 0 1.2rem }
-        .item li { margin: .2rem 0 }
+        .item li {
+            margin: .2rem 0;
+        }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill,minmax(210px,1fr));
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
             gap: 1rem;
-            margin-top: 1.2rem
+            margin-top: 1.2rem;
         }
 
         .photo {
             padding: 0;
             border: 1px solid var(--line);
+            border-radius: var(--r);
             overflow: hidden;
             background: var(--surface);
             cursor: zoom-in;
-            transition: box-shadow .2s,transform .2s
+            transition: box-shadow .2s, transform .2s;
         }
 
         .photo:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 24px -14px rgba(15,27,45,.45)
+            box-shadow: 0 10px 24px -14px rgba(15, 27, 45, .45);
         }
 
         .photo img {
             display: block;
             width: 100%;
-            height: 170px;
-            object-fit: cover
+            height: 190px;
+            object-fit: cover;
         }
 
-        .cap {
+        .photo .cap {
             display: block;
-            padding: .6rem .9rem;
-            font-size: .9rem;
+            padding: .65rem .75rem;
+            border-top: 1px solid var(--line);
             color: var(--muted);
-            border-top: 1px solid var(--line)
+            font-size: .88rem;
+            line-height: 1.4;
+            text-align: center;
         }
 
         .certs {
             display: grid;
-            grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
-            gap: 1.2rem
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
         }
 
         .cert {
             background: var(--surface);
             border: 1px solid var(--line);
+            border-radius: var(--r);
             padding: 1.5rem;
             display: grid;
             gap: .7rem;
             justify-items: start;
-            align-content: start
+            align-content: start;
         }
 
-        .cert.wide { grid-column: 1/-1 }
+        .cert.wide {
+            grid-column: 1 / -1;
+        }
 
         .cert .img {
             background: #fff;
             border: 1px solid var(--line);
             border-radius: 12px;
             padding: .5rem;
-            cursor: zoom-in
+            cursor: zoom-in;
         }
 
         .cert img {
             display: block;
             width: 140px;
             height: 140px;
-            object-fit: contain
+            object-fit: contain;
         }
 
-        .cert .img.wide { width: 100% }
+        .cert .img.wide {
+            width: 100%;
+        }
 
         .cert .img.wide img {
             width: 100%;
-            height: auto
+            height: auto;
         }
 
         .cert .img.land {
             width: 100%;
-            max-width: 300px
+            max-width: 300px;
         }
 
         .cert .img.land img {
             width: 100%;
-            height: auto
+            height: auto;
         }
 
         .cert h3 {
-            font: 800 1.15rem/1.3 var(--display)
+            font: 800 1.15rem/1.3 var(--display);
         }
 
         .cert .meta {
             color: var(--muted);
             font-size: .93rem;
-            line-height: 1.5
+            line-height: 1.5;
         }
 
         .cert a {
             color: var(--cobalt);
-            font-weight: 500
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--line);
+            padding: 2rem 0 2.5rem;
+            color: var(--muted);
+            font-size: .9rem;
+            text-align: center;
+        }
+
+        dialog {
+            border: 0;
+            border-radius: 18px;
+            padding: 1rem;
+            background: var(--surface);
+            max-width: min(94vw, 900px);
+            color: var(--ink);
+            margin: auto;
+        }
+
+        dialog::backdrop {
+            background: rgba(5, 10, 20, .72);
+        }
+
+        dialog img {
+            display: block;
+            max-width: 100%;
+            max-height: 75vh;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        dialog button {
+            margin-top: .8rem;
+            padding: .5rem 1.2rem;
+            border-radius: 999px;
+            border: 2px solid var(--ink);
+            background: transparent;
+            font-weight: 500;
+        }
+
+        @media (max-width: 560px) {
+            .wrap {
+                padding: 0 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding-top: 3rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: .7rem;
+            }
+
+            .photo img {
+                height: 145px;
+            }
+
+            .item {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition: none !important;
+            }
         }
     </style>
 </head>
+
 <body>
+
     <header class="bar">
         <div class="wrap">
             <a class="back" href="index.html">← Back to portfolio</a>
@@ -395,220 +432,475 @@
     </header>
 
     <main class="wrap">
+
         <h1>Achievements</h1>
-        <p class="lead">What I accomplished in senior high school, Grade 11 to 12, and the certificates I’ve earned.</p>
+        <p class="lead">
+            What I accomplished in senior high school, my college journey, and the certificates I’ve earned.
+        </p>
 
+        <!-- SENIOR HIGH SCHOOL -->
         <section aria-labelledby="shs">
+
             <h2 id="shs">Senior high school</h2>
+
             <div class="tabs" role="tablist" aria-label="Grade level">
-                <button class="tab" role="tab" id="t11" aria-controls="p11" aria-selected="true" type="button">Grade 11</button>
-                <button class="tab" role="tab" id="t12" aria-controls="p12" aria-selected="false" tabindex="-1" type="button">Grade 12</button>
+
+                <button class="tab"
+                        role="tab"
+                        id="t11"
+                        aria-controls="p11"
+                        aria-selected="true"
+                        type="button">
+                    Grade 11
+                </button>
+
+                <button class="tab"
+                        role="tab"
+                        id="t12"
+                        aria-controls="p12"
+                        aria-selected="false"
+                        tabindex="-1"
+                        type="button">
+                    Grade 12
+                </button>
+
             </div>
 
+            <!-- GRADE 11 -->
             <div class="panel" role="tabpanel" id="p11" aria-labelledby="t11">
+
                 <div class="timeline">
+
                     <article class="item" style="--c:var(--cobalt)">
-                        <div class="meta">Grade 11 · TVL-ICT · S.Y. 2021–2022 · Colegio de Calumpit Inc.</div>
+                        <div class="meta">
+                            Grade 11 · TVL-ICT · S.Y. 2021–2022 · Colegio de Calumpit Inc.
+                        </div>
+
                         <h3>Academic Excellence Awardee, With Honors</h3>
-                        <p>Recognized as one of the Academic Excellence awardees for the 1st semester. Certificate given on January 15, 2022.</p>
+
+                        <p>
+                            Recognized as one of the Academic Excellence awardees for the 1st semester.
+                            Certificate given on January 15, 2022.
+                        </p>
                     </article>
-                    <article class="item todo" style="--c:var(--mint)">
+
+                    <article class="item" style="--c:var(--mint)">
                         <div class="meta">Grade 11 · School year</div>
-                        <h3>Add another one here</h3>
-                        <p>One or two sentences on what you did and what it earned you.</p>
+                        <h3>Add another achievement here</h3>
+                        <p>
+                            Add a short description of another Grade 11 achievement when available.
+                        </p>
                     </article>
+
                 </div>
+
             </div>
 
+            <!-- GRADE 12 -->
             <div class="panel" role="tabpanel" id="p12" aria-labelledby="t12" hidden>
+
                 <div class="timeline">
+
                     <article class="item" style="--c:var(--marigold)">
+
                         <div class="meta">Grade 12 · Senior high school</div>
+
                         <h3>Graduated With Honors</h3>
-                        <p>Successfully completed Grade 12 and graduated with honors in recognition of my academic performance and dedication throughout senior high school.</p>
+
+                        <p>
+                            Successfully completed Grade 12 and graduated with honors
+                            in recognition of my academic performance and dedication
+                            throughout senior high school.
+                        </p>
+
                     </article>
+
                 </div>
-                <h3 class="sub">Grade 12 highlights</h3>
+
+                <h3 style="margin-top:1rem;">Grade 12 highlights</h3>
+
                 <div class="gallery">
-                    <button class="photo" type="button" data-full="images/SS8.PNG" data-alt="Grade 12 achievement photo 1" aria-label="Enlarge Grade 12 achievement photo 1">
-                        <img src="images/SS8.jpg" alt="Grade 12 achievement photo 1" loading="lazy">
-                        <span class="cap">Grade 12 highlight</span>
+
+                    <!-- SS8 - GRADE 12 -->
+                    <button class="photo"
+                            type="button"
+                            data-alt="Grade 12 graduation portrait"
+                            aria-label="Enlarge Grade 12 graduation portrait">
+
+                        <img src="images/SS8.jpg"
+                             alt="Grade 12 graduation portrait"
+                             loading="lazy">
+
+                        <span class="cap">Grade 12 Graduation</span>
+
                     </button>
-                    <button class="photo" type="button" data-full="images/SS9.PNG" data-alt="Grade 12 achievement photo 2" aria-label="Enlarge Grade 12 achievement photo 2">
-                        <img src="images/SS9.jpg" alt="Grade 12 achievement photo 2" loading="lazy">
-                        <span class="cap">Grade 12 highlight</span>
+
+                    <!-- SS12 - GRADE 12 -->
+                    <button class="photo"
+                            type="button"
+                            data-alt="Grade 12 school highlight"
+                            aria-label="Enlarge Grade 12 school highlight">
+
+                        <img src="images/SS12.PNG"
+                             alt="Grade 12 school highlight"
+                             loading="lazy">
+
+                        <span class="cap">Grade 12 Highlight</span>
+
                     </button>
-                    <button class="photo" type="button" data-full="images/SS10.PNG" data-alt="Grade 12 achievement photo 3" aria-label="Enlarge Grade 12 achievement photo 3">
-                        <img src="images/SS10.jpg" alt="Grade 12 achievement photo 3" loading="lazy">
-                        <span class="cap">Grade 12 highlight</span>
-                    </button>
-                    <button class="photo" type="button" data-full="images/SS11.PNG" data-alt="Grade 12 achievement photo 4" aria-label="Enlarge Grade 12 achievement photo 4">
-                        <img src="images/SS11.jpg" alt="Grade 12 achievement photo 4" loading="lazy">
-                        <span class="cap">Grade 12 highlight</span>
-                    </button>
+
                 </div>
+
             </div>
+
         </section>
 
-        <section aria-labelledby="exp">
-            <h2 id="exp">Experience</h2>
-            <article class="item" style="--c:var(--mint)">
-                <div class="meta">Colegio de Calumpit Inc. · Senior high school</div>
-                <h3>PC builder and team lead</h3>
-                <p>I learned to build computers from individual parts, and I handled a team that built PCs for two departments.</p>
-                <ul>
-                    <li>Built PCs for the college department</li>
-                    <li>Built PCs for the elementary to high school department laboratory</li>
-                    <li>Led and coordinated the team doing the builds</li>
-                </ul>
-            </article>
+        <!-- COLLEGE HIGHLIGHTS -->
+        <section aria-labelledby="college-highlights">
+
+            <h2 id="college-highlights">College highlights</h2>
+
+            <p class="lead">
+                A collection of memorable moments and experiences from my college journey.
+            </p>
+
             <div class="gallery">
-                <button class="photo" type="button" data-full="images/SS3.PNG" data-alt="Installing parts inside a PC case" aria-label="Enlarge photo: installing parts inside a PC case">
+
+                <!-- SS9 - COLLEGE -->
+                <button class="photo"
+                        type="button"
+                        data-alt="College highlight photo 1"
+                        aria-label="Enlarge college highlight photo 1">
+
+                    <img src="images/SS9.jpg"
+                         alt="College highlight photo 1"
+                         loading="lazy">
+
+                    <span class="cap">College Highlight</span>
+
+                </button>
+
+                <!-- SS10 - COLLEGE -->
+                <button class="photo"
+                        type="button"
+                        data-alt="College highlight photo 2"
+                        aria-label="Enlarge college highlight photo 2">
+
+                    <img src="images/SS10.jpg"
+                         alt="College highlight photo 2"
+                         loading="lazy">
+
+                    <span class="cap">College Highlight</span>
+
+                </button>
+
+                <!-- SS11 - COLLEGE -->
+                <button class="photo"
+                        type="button"
+                        data-alt="College highlight photo 3"
+                        aria-label="Enlarge college highlight photo 3">
+
+                    <img src="images/SS11.jpg"
+                         alt="College highlight photo 3"
+                         loading="lazy">
+
+                    <span class="cap">College Highlight</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section aria-labelledby="exp">
+
+            <h2 id="exp">Experience</h2>
+
+            <article class="item" style="--c:var(--mint)">
+
+                <div class="meta">
+                    Colegio de Calumpit Inc. · Senior high school
+                </div>
+
+                <h3>PC Builder and Team Lead</h3>
+
+                <p>
+                    I learned to build computers from individual parts, and I handled
+                    a team that built PCs for two departments.
+                </p>
+
+                <ul>
+                    <li>Built PCs for the college department.</li>
+                    <li>Built PCs for the elementary to high school department laboratory.</li>
+                    <li>Led and coordinated the team doing the builds.</li>
+                </ul>
+
+            </article>
+
+            <div class="gallery">
+
+                <button class="photo" type="button" data-alt="Installing parts inside a PC case">
                     <img src="images/SS3.PNG" alt="Installing parts inside a PC case" loading="lazy">
                 </button>
-                <button class="photo" type="button" data-full="images/SS4.PNG" data-alt="Two people assembling a PC" aria-label="Enlarge photo: two people assembling a PC">
+
+                <button class="photo" type="button" data-alt="Two people assembling a PC">
                     <img src="images/SS4.PNG" alt="Two people assembling a PC" loading="lazy">
                 </button>
-                <button class="photo" type="button" data-full="images/SS5.PNG" data-alt="Assembling PC hardware at a workbench" aria-label="Enlarge photo: assembling PC hardware at a workbench">
+
+                <button class="photo" type="button" data-alt="Assembling PC hardware at a workbench">
                     <img src="images/SS5.PNG" alt="Assembling PC hardware at a workbench" loading="lazy">
                 </button>
-                <button class="photo" type="button" data-full="images/SS6.PNG" data-alt="Working at a computer lab workstation" aria-label="Enlarge photo: working at a computer lab workstation">
-                    <img src="images/SS6.PNG" alt="Working at a computer lab workstation" loading="lazy">
+
+                <button class="photo" type="button" data-alt="Working at a computer laboratory workstation">
+                    <img src="images/SS6.PNG" alt="Working at a computer laboratory workstation" loading="lazy">
                 </button>
+
             </div>
+
         </section>
 
+        <!-- CERTIFICATES -->
         <section aria-labelledby="certs">
+
             <h2 id="certs">Certificates</h2>
+
             <div class="certs">
+
+                <!-- MICROSOFT BADGE -->
                 <article class="cert">
-                    <button class="img" type="button" data-full="images/SS2.PNG" data-alt="Microsoft Office Specialist badge" aria-label="Enlarge Microsoft Office Specialist badge">
-                        <img src="images/SS2.jpg" alt="Microsoft Office Specialist badge" width="140" height="140">
+
+                    <button class="img"
+                            type="button"
+                            data-alt="Microsoft Office Specialist badge"
+                            aria-label="Enlarge Microsoft Office Specialist badge">
+
+                        <img src="images/SS2.PNG"
+                             alt="Microsoft Office Specialist badge"
+                             width="140"
+                             height="140">
+
                     </button>
-                    <h3>Microsoft Office Specialist: Excel Associate (Office 2019)</h3>
-                    <div class="meta">Issued by Microsoft via Credly</div>
-                    <a href="#" target="_blank" rel="noopener">View credential</a>
+
+                    <h3>
+                        Microsoft Office Specialist: Excel Associate (Office 2019)
+                    </h3>
+
+                    <div class="meta">
+                        Issued by Microsoft via Credly
+                    </div>
+
+                    <a href="#"
+                       target="_blank"
+                       rel="noopener">
+                        View credential
+                    </a>
+
                 </article>
 
+                <!-- CERTIPORT TRANSCRIPT -->
                 <article class="cert wide">
-                    <button class="img wide" type="button" data-full="images/SS1.PNG" data-alt="Certiport transcript: Microsoft Office Specialist, Excel 2019, exam passed 5/21/2024" aria-label="Enlarge Certiport transcript">
-                        <img src="images/SS1.jpg" alt="Certiport transcript: Microsoft Office Specialist, Excel 2019, exam passed 5/21/2024" width="966" height="140">
+
+                    <button class="img wide"
+                            type="button"
+                            data-alt="Certiport transcript: Microsoft Office Specialist, Excel 2019">
+
+                        <img src="images/SS1.PNG"
+                             alt="Certiport transcript: Microsoft Office Specialist, Excel 2019"
+                             width="966"
+                             height="140">
+
                     </button>
-                    <h3>Certiport Digital Transcript: Microsoft Office Specialist, Excel 2019</h3>
-                    <div class="meta">Exam: Microsoft Excel (Office 2019) · Passed May 21, 2024 · Administered by La Consolacion University Philippines</div>
+
+                    <h3>
+                        Certiport Digital Transcript: Microsoft Office Specialist, Excel 2019
+                    </h3>
+
+                    <div class="meta">
+                        Exam: Microsoft Excel (Office 2019) · Passed May 21, 2024 ·
+                        Administered by La Consolacion University Philippines
+                    </div>
+
                 </article>
 
+                <!-- GRADE 11 CERTIFICATE -->
                 <article class="cert">
-                    <button class="img land" type="button" data-full="images/SS7.PNG" data-alt="Certificate of Recognition, With Honors, Grade 11 TVL-ICT, Colegio de Calumpit" aria-label="Enlarge Certificate of Recognition">
-                        <img src="images/SS7.jpg" alt="Certificate of Recognition, With Honors, Grade 11 TVL-ICT, Colegio de Calumpit" width="427" height="329">
+
+                    <button class="img land"
+                            type="button"
+                            data-alt="Certificate of Recognition, With Honors, Grade 11 TVL-ICT">
+
+                        <img src="images/SS7.PNG"
+                             alt="Certificate of Recognition, With Honors, Grade 11 TVL-ICT"
+                             width="427"
+                             height="329">
+
                     </button>
+
                     <h3>Certificate of Recognition, With Honors</h3>
-                    <div class="meta">Grade 11 TVL-ICT · Academic Excellence, 1st semester · Colegio de Calumpit Inc. · January 15, 2022</div>
+
+                    <div class="meta">
+                        Grade 11 TVL-ICT · Academic Excellence, 1st semester ·
+                        Colegio de Calumpit Inc. · January 15, 2022
+                    </div>
+
                 </article>
+
             </div>
+
         </section>
+
     </main>
 
     <div class="wrap">
-        <footer>© <span id="year"></span> Jose Raphael Roxas</footer>
+        <footer>
+            © <span id="year"></span> Jose Raphael Roxas
+        </footer>
     </div>
 
-    <dialog id="lightbox" aria-label="Certificate preview">
+    <!-- IMAGE LIGHTBOX -->
+    <dialog id="lightbox" aria-label="Image preview">
+
         <img id="lbImg" alt="">
+
         <button type="button" id="lbClose">Close</button>
+
     </dialog>
 
     <script>
-        /* Picture fallback: if a picture isn't found in images/, try the main folder and .png spelling */
-        addEventListener("error", e => {
-            const img = e.target;
-            if (!(img instanceof HTMLImageElement)) return;
-            const s = img.getAttribute("src");
-            if (!s) return;
-            const file = s.split("/").pop();
-            const names = [file, file.replace(/\.PNG$/i, ".png")];
-            const tries = [];
-            ["images/", ""].forEach(d => names.forEach(n => tries.push(d + n)));
-            const i = +(img.dataset.try || 0);
-            if (i + 1 < tries.length) {
-                img.dataset.try = i + 1;
-                img.src = tries[i + 1];
-            }
-        }, true);
 
-        document.getElementById("year").textContent = new Date().getFullYear();
+        // Current year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
 
-        /* Theme: shares the choice made on the main page */
+
+        // Theme toggle
         const root = document.documentElement;
         const themeBtn = document.getElementById("theme");
 
-        function setTheme(t, save) {
-            root.dataset.theme = t;
-            themeBtn.textContent = t === "dark" ? "☀️" : "🌙";
+        function setTheme(theme, save) {
+
+            root.dataset.theme = theme;
+
+            themeBtn.textContent =
+                theme === "dark" ? "☀️" : "🌙";
+
             themeBtn.setAttribute(
                 "aria-label",
-                t === "dark" ? "Switch to light mode" : "Switch to dark mode"
+                theme === "dark"
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
             );
+
             if (save) {
                 try {
-                    localStorage.setItem("theme", t);
+                    localStorage.setItem("theme", theme);
                 } catch (e) {}
             }
+
         }
 
-        let saved = null;
+        let savedTheme = null;
+
         try {
-            saved = localStorage.getItem("theme");
+            savedTheme = localStorage.getItem("theme");
         } catch (e) {}
 
         setTheme(
-            saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"),
+            savedTheme ||
+            (matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light"),
             false
         );
 
         themeBtn.addEventListener("click", () => {
-            setTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
+
+            setTheme(
+                root.dataset.theme === "dark" ? "light" : "dark",
+                true
+            );
+
         });
 
-        /* Grade tabs with arrow-key support */
+
+        // Grade tabs
         const tabs = [...document.querySelectorAll(".tab")];
 
-        function select(tab) {
+        function selectTab(tab) {
+
             tabs.forEach(t => {
-                const on = t === tab;
-                t.setAttribute("aria-selected", on);
-                t.tabIndex = on ? 0 : -1;
-                document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+
+                const active = t === tab;
+
+                t.setAttribute("aria-selected", active);
+                t.tabIndex = active ? 0 : -1;
+
+                document.getElementById(
+                    t.getAttribute("aria-controls")
+                ).hidden = !active;
+
             });
+
             tab.focus();
+
         }
 
-        tabs.forEach((t, i) => {
-            t.addEventListener("click", () => select(t));
-            t.addEventListener("keydown", e => {
-                if (e.key === "ArrowRight") select(tabs[(i + 1) % tabs.length]);
-                if (e.key === "ArrowLeft") select(tabs[(i - 1 + tabs.length) % tabs.length]);
+        tabs.forEach((tab, index) => {
+
+            tab.addEventListener("click", () => {
+                selectTab(tab);
             });
-        });
 
-        /* Certificate and photo lightbox */
-        const lb = document.getElementById("lightbox");
-        const lbImg = document.getElementById("lbImg");
+            tab.addEventListener("keydown", event => {
 
-        document.querySelectorAll(".cert .img, .photo").forEach(b => {
-            b.addEventListener("click", () => {
-                lbImg.dataset.try = 0;
-                lbImg.src = b.querySelector("img").getAttribute("src");
-                lbImg.alt = b.dataset.alt;
-                lb.showModal();
+                if (event.key === "ArrowRight") {
+                    selectTab(tabs[(index + 1) % tabs.length]);
+                }
+
+                if (event.key === "ArrowLeft") {
+                    selectTab(
+                        tabs[(index - 1 + tabs.length) % tabs.length]
+                    );
+                }
+
             });
+
         });
 
-        document.getElementById("lbClose").addEventListener("click", () => lb.close());
 
-        lb.addEventListener("click", e => {
-            if (e.target === lb) lb.close();
+        // Image lightbox
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lbImg");
+
+        document.querySelectorAll(".photo, .cert .img").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const image = button.querySelector("img");
+
+                lightboxImage.src = image.src;
+                lightboxImage.alt = button.dataset.alt || image.alt;
+
+                lightbox.showModal();
+
+            });
+
         });
+
+        document.getElementById("lbClose").addEventListener("click", () => {
+            lightbox.close();
+        });
+
+        lightbox.addEventListener("click", event => {
+
+            if (event.target === lightbox) {
+                lightbox.close();
+            }
+
+        });
+
     </script>
+
 </body>
 </html>
