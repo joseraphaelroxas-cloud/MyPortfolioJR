@@ -242,6 +242,151 @@
                     border-color: var(--cobalt)
                 }
 
+
+
+        /* picture roulette */
+        .roulette {
+            position: relative;
+            margin: 1.2rem 0 1.2rem;
+            padding: clamp(1.2rem,3vw,2rem);
+            overflow: hidden;
+            border: 2px solid var(--ink);
+            border-radius: 22px;
+            background: var(--surface);
+            box-shadow: 9px 9px 0 var(--cobalt);
+        }
+
+        .roulette::before {
+            content: "";
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            right: -65px;
+            top: -95px;
+            border-radius: 50%;
+            background: var(--marigold);
+            opacity: .22;
+            pointer-events: none;
+        }
+
+        .roulette-top {
+            position: relative;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .roulette-kicker {
+            color: var(--cobalt);
+            font-size: .78rem;
+            font-weight: 500;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .roulette h2 {
+            margin: .15rem 0 0;
+            font-size: clamp(1.5rem,4vw,2.2rem);
+        }
+
+        .roulette h2::after { display: none; }
+
+        .roulette-note {
+            max-width: 25rem;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        .roulette-slots {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: .9rem;
+        }
+
+        .roulette-slot {
+            min-width: 0;
+            padding: .45rem;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--bg);
+            overflow: hidden;
+        }
+
+        .roulette-slot img {
+            display: block;
+            width: 100%;
+            height: clamp(125px,20vw,210px);
+            object-fit: cover;
+            border-radius: 9px;
+            background: var(--surface);
+        }
+
+        .roulette-slot span {
+            display: block;
+            padding: .55rem .35rem .2rem;
+            color: var(--muted);
+            font-size: .82rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .roulette-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .roulette-status {
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        .roulette-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            padding: .75rem 1.25rem;
+            border: 2px solid var(--ink);
+            border-radius: 999px;
+            background: var(--ink);
+            color: var(--bg);
+            font-weight: 500;
+            transition: transform .15s,box-shadow .15s,opacity .15s;
+        }
+
+        .roulette-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 0 var(--marigold);
+        }
+
+        .roulette-btn:disabled { cursor: wait; opacity: .7; }
+
+        .roulette-slot.spinning img { animation: roulette-pop .18s ease-in-out; }
+
+        @keyframes roulette-pop {
+            50% { transform: scale(.97); filter: brightness(1.12); }
+        }
+
+        @media (max-width:560px) {
+            .roulette { box-shadow: 6px 6px 0 var(--cobalt); }
+            .roulette-top,.roulette-bottom { align-items: flex-start; flex-direction: column; }
+            .roulette-slots { gap: .45rem; }
+            .roulette-slot { padding: .25rem; }
+            .roulette-slot img { height: 115px; }
+            .roulette-slot span { font-size: .72rem; padding-left: .1rem; padding-right: .1rem; }
+            .roulette-btn { width: 100%; }
+        }
+
+        @media (prefers-reduced-motion:reduce) {
+            .roulette-slot.spinning img { animation: none; }
+        }
+
         .hero {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
@@ -781,6 +926,25 @@
 
     <div class="wrap" id="top">
         <main>
+            <section class="roulette" id="pictureRoulette" aria-labelledby="rouletteTitle">
+                <div class="roulette-top">
+                    <div>
+                        <div class="roulette-kicker">A little random throwback</div>
+                        <h2 id="rouletteTitle">Picture Roulette</h2>
+                    </div>
+                    <p class="roulette-note">A random spin through some of my certificates and hands-on IT moments. Give it a try.</p>
+                </div>
+                <div class="roulette-slots" aria-label="Three randomly selected portfolio photos">
+                    <div class="roulette-slot"><img id="rouletteImg1" src="images/SS3.PNG" alt="PC building highlight"><span id="rouletteCap1">PC building</span></div>
+                    <div class="roulette-slot"><img id="rouletteImg2" src="images/SS2.PNG" alt="Microsoft Office Specialist badge"><span id="rouletteCap2">MOS certification</span></div>
+                    <div class="roulette-slot"><img id="rouletteImg3" src="images/SS7.PNG" alt="Grade 11 honors certificate"><span id="rouletteCap3">Academic highlight</span></div>
+                </div>
+                <div class="roulette-bottom">
+                    <p class="roulette-status" id="rouletteStatus" aria-live="polite">Your first random set is ready.</p>
+                    <button class="roulette-btn" id="spinRoulette" type="button"><span aria-hidden="true">✦</span> Spin the memories</button>
+                </div>
+            </section>
+
             <div class="hero">
                 <div class="hero-text">
                     <h1>Jose Raphael <span>Roxas</span></h1>
@@ -978,6 +1142,69 @@
 
         /* year */
         $("#year").textContent = new Date().getFullYear();
+
+        /* picture roulette: randomly selects three different images from the existing highlights */
+        const roulettePhotos = [
+            { src: "images/SS1.PNG", alt: "Certiport transcript for Microsoft Office Specialist Excel 2019", caption: "Excel transcript" },
+            { src: "images/SS2.PNG", alt: "Microsoft Office Specialist Excel Associate badge", caption: "MOS certification" },
+            { src: "images/SS3.PNG", alt: "Installing parts inside a PC case", caption: "PC building" },
+            { src: "images/SS4.PNG", alt: "Two people assembling a PC", caption: "Building a PC" },
+            { src: "images/SS5.PNG", alt: "Assembling PC hardware at a workbench", caption: "Hands-on hardware" },
+            { src: "images/SS6.PNG", alt: "Working at a computer lab workstation", caption: "Computer lab" },
+            { src: "images/SS7.PNG", alt: "Certificate of Recognition for Grade 11 honors", caption: "Grade 11 honors" }
+        ];
+        const rouletteSlots = [1, 2, 3].map(n => ({
+            card: $("#rouletteImg" + n),
+            caption: $("#rouletteCap" + n),
+            frame: $("#rouletteImg" + n).closest(".roulette-slot")
+        }));
+        const spinButton = $("#spinRoulette"), rouletteStatus = $("#rouletteStatus");
+
+        function shuffledRoulettePhotos() {
+            const list = [...roulettePhotos];
+            for (let i = list.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [list[i], list[j]] = [list[j], list[i]];
+            }
+            return list.slice(0, 3);
+        }
+
+        function showRoulettePhotos(photos) {
+            photos.forEach((photo, i) => {
+                const slot = rouletteSlots[i];
+                slot.card.dataset.try = "0";
+                slot.card.src = photo.src;
+                slot.card.alt = photo.alt;
+                slot.caption.textContent = photo.caption;
+                slot.frame.classList.remove("spinning");
+                void slot.frame.offsetWidth;
+                slot.frame.classList.add("spinning");
+            });
+        }
+
+        showRoulettePhotos(shuffledRoulettePhotos());
+
+        spinButton.addEventListener("click", () => {
+            if (spinButton.disabled) return;
+            spinButton.disabled = true;
+            rouletteStatus.textContent = "Spinning through the highlights…";
+            const totalSteps = reduceMotion ? 1 : 13;
+            let step = 0;
+
+            function spinStep() {
+                showRoulettePhotos(shuffledRoulettePhotos());
+                step++;
+                if (step < totalSteps) {
+                    const delay = reduceMotion ? 0 : 65 + Math.pow(step / totalSteps, 2) * 260;
+                    setTimeout(spinStep, delay);
+                } else {
+                    spinButton.disabled = false;
+                    rouletteStatus.textContent = "New memories unlocked. Spin again anytime.";
+                }
+            }
+            spinStep();
+        });
+
 
         /* theme toggle (remembers choice) */
         const root = document.documentElement, themeBtn = $("#theme");
